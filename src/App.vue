@@ -1,23 +1,35 @@
 <template>
   <div id="app" class="container mt-5">
-    <h1>AZShop</h1>
-    <div>
-      <p class="animate__animated animate__fadeInDown">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, enim vero reiciendis quibusdam rem voluptatem inventore nobis aliquam commodi error facilis cumque ut eveniet asperiores. Voluptatum modi veritatis deserunt
-        harum.
-      </p>
-      <font-awesome-icon icon="shopping-cart"></font-awesome-icon>
-    </div>
+    <h1>Tokopadia</h1>
+    <product-list :products="products" :maximum="maximum"> </product-list>
   </div>
 </template>
 
 <script>
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+// import Price from "./components/Price.vue";
+import ProductList from "./components/ProductList.vue";
 
 export default {
-  name: "App",
+  name: "app",
+  data: function () {
+    return {
+      maximum: 50,
+      products: [],
+    };
+  },
   components: {
-    FontAwesomeIcon,
+    // FontAwesomeIcon,
+    // Price,
+    ProductList,
+  },
+  mounted: function () {
+    fetch("https://api.storerestapi.com/products")
+      .then((response) => response.json())
+      .then((data) => {
+        this.products = data;
+        console.log(data);
+      });
   },
 };
 </script>
