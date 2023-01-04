@@ -12,7 +12,7 @@
       </div>
       <div class="col">
         <!-- ini reaktive data  -->
-        <h2 class="text-info">{{ item.title }}</h2>
+        <h2 class="text-info">{{ item.name }}</h2>
         <p class="mb-0">{{ item.description }}</p>
         <!-- cara menggunakan filters dengan symbol |  di ikuti dengan nama filtersnya -->
         <div class="h5 float-right">
@@ -22,7 +22,6 @@
     </div>
   </transition-group>
 </template>
-
 <script>
 import Price from "./Price.vue";
 
