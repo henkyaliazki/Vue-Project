@@ -1,6 +1,7 @@
 <template>
   <div id="app" class="container mt-5">
-    <products :cart="cart" :cartQty="cartQty" :cartTotal="cartTotal" :sliderStatus="sliderStatus" :maximum.sync="maximum" :products="products" @toggle-slider="toggleSlider" @add-item="addItem" @delete-item="deleteItem"></products>
+    <checkout :cart="cart" :cartTotal="cartTotal" @add-item="addItem" @delete-item="deleteItem"></checkout>
+    <products :cart="cart" :cartQty="cartQty" :cartTotal="cartTotal" :sliderStatus="sliderStatus" :maximum.sync="maximum" :products="products" @toggle="toggleSliderStatus" @add-item="addItem" @delete-item="deleteItem"></products>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 // import PriceSlider from "./components/PriceSlider.vue" ;
 // vue-router
 import Products from "./components/Products.vue";
+import Checkout from "./components/Checkout.vue";
 
 export default {
   name: "app",
@@ -23,6 +25,7 @@ export default {
   },
   components: {
     Products,
+    Checkout,
   },
   mounted: function () {
     fetch("https://hplussport.com/api/products/order/price")

@@ -1,9 +1,10 @@
 <template>
   <div>
     <h1>TokoGadai</h1>
-    <navbar :cart="cart" :cartQty="cartQty" :cartTotal="cartTotal" @toggle-slider="toggleSlider" @delete="deleteItem"></navbar>
+    <navbar :cart="cart" :cartQty="cartQty" :cartTotal="cartTotal" @toggle-slide="toggleSlider" @delete-item="deleteItem"></navbar>
     <price-slider :sliderStatus="sliderStatus" :maximum.sync="maximum"></price-slider>
-    <product-list :products="products" :maximum="maximum" @add="addItem"> </product-list>
+    <pre></pre>
+    <product-list :products="products" :maximum="maximum" @add-item="addItem"> </product-list>
   </div>
 </template>
 
