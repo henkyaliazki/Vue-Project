@@ -4,7 +4,7 @@
       <!-- ini adalah pengkondisian dalam vue -->
       <div class="col-1 m-auto">
         <!-- event pada vue, jadi jika kita click tombol + maka item akan masuk(push) ke cart -->
-        <button class="btn btn-info" @click="$emit('add', item)">+</button>
+        <button class="btn btn-info" @click="$emit('add-item', item)">+</button>
       </div>
       <div class="col-sm-4">
         <!-- binding elemet/atribut dengan cara menggunakan tanda : jadi untuk memanggil data tidak perlu dengan {{}} tapi lebih mudah dengan tanda : diawal -->

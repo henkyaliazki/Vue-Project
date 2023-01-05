@@ -1,16 +1,15 @@
 <template>
   <div id="app" class="container mt-5">
-    <h1>TokoGadai</h1>
-    <navbar :cart="cart" :cartQty="cartQty" :cartTotal="cartTotal" @toggle="toggleSliderStatus" @delete="deleteItem"></navbar>
-    <price-slider :sliderStatus="sliderStatus" :maximum.sync="maximum"></price-slider>
-    <product-list :products="products" :maximum="maximum" @add="addItem"> </product-list>
+    <products :cart="cart" :cartQty="cartQty" :cartTotal="cartTotal" :sliderStatus="sliderStatus" :maximum.sync="maximum" :products="products" @toggle-slider="toggleSlider" @add-item="addItem" @delete-item="deleteItem"></products>
   </div>
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
-import ProductList from "./components/ProductList.vue";
-import PriceSlider from "./components/PriceSlider.vue";
+// import Navbar from "./components/Navbar.vue";
+// import ProductList from "./components/ProductList.vue";
+// import PriceSlider from "./components/PriceSlider.vue" ;
+// vue-router
+import Products from "./components/Products.vue";
 
 export default {
   name: "app",
@@ -23,9 +22,7 @@ export default {
     };
   },
   components: {
-    Navbar,
-    ProductList,
-    PriceSlider,
+    Products,
   },
   mounted: function () {
     fetch("https://hplussport.com/api/products/order/price")
