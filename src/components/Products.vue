@@ -4,7 +4,7 @@
     <navbar :cart="cart" :cartQty="cartQty" :cartTotal="cartTotal" @toggle-slide="toggleSlider" @delete-item="deleteItem"></navbar>
     <price-slider :sliderStatus="sliderStatus" :maximum.sync="maximum"></price-slider>
     <pre></pre>
-    <product-list :products="products" :maximum="maximum" @add-item="addItem"> </product-list>
+    <product-list :products="products" :maximum="maximum" @add-item="addItem"></product-list>
   </div>
 </template>
 
